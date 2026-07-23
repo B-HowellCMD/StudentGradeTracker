@@ -29,12 +29,22 @@ class Student:
             total += grade
         if len(self.grades) == 0:
             return 0
-        return total / len(self.grades)   
+        total_avg = total / len(self.grades)
+        print(f"Average Grade: {total_avg}")
+        return total_avg
+
+    def highest_grade(self):
+        if len(self.grades) == 0:
+            return
+        highest_score = max(self.grades)
+        return highest_score
+
         
-        print(f"Average Grade:")
 
 student1 = Student("Bryson")
 student1.add_grade(90)
 student1.add_grade(72)
 student1.add_grade(85)
+print(f"Average Grade: {student1.average_grade()}")
+print(f"Highest Grade: {student1.highest_grade()}")
 # make sure figure out a way to print out the averaged total of student grade
