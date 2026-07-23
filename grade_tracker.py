@@ -3,12 +3,12 @@ class Student:
         # each student gets their own name and list of grades
         # self is the specific Student object being created
         self.name = name
-        self.grades: list[int, float] = []
+        self.grades: list[int] = []
         
-    def add_grade(self, grade: int | float):
+    def add_grade(self, grade: int):
         # we validate the grade before adding it 
         # this prevents invalid grades e.g.: -20 or 150
-        if not isinstance(grade, int, float):
+        if not isinstance(grade, int):
             print("Grade input must be a number value")
             return
         if 0 <= grade <= 100:
@@ -23,8 +23,18 @@ class Student:
         for grade in self.grades:
             print(grade)
             
+    def average_grade(self):
+        total = 0;
+        for grade in self.grades:
+            total += grade
+        if len(self.grades) == 0:
+            return 0
+        return total / len(self.grades)   
+        
+        print(f"Average Grade:")
 
 student1 = Student("Bryson")
 student1.add_grade(90)
 student1.add_grade(72)
 student1.add_grade(85)
+# make sure figure out a way to print out the averaged total of student grade
