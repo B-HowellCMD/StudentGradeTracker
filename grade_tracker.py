@@ -36,8 +36,18 @@ class Student:
             total += grade
         if len(self.grades) == 0:
             return 0
-        return total / len(self.grades)   
+        total_avg = total / len(self.grades)
+        print(f"Average Grade: {total_avg}")
+        return total_avg
+
+    def highest_grade(self):
+        if len(self.grades) == 0:
+            return
+        highest_score = max(self.grades)
+        return highest_score
+
         
+<<<<<<< HEAD
         print(f"Average Grade:")
         
 
@@ -45,3 +55,13 @@ class Student:
 # we should make a way to have each student have its own entry 
 # a student can be added in at any time with input
 # make a menu with options to add, delete, and edit students and their grades
+=======
+
+student1 = Student("Bryson")
+student1.add_grade(90)
+student1.add_grade(72)
+student1.add_grade(85)
+print(f"Average Grade: {student1.average_grade()}")
+print(f"Highest Grade: {student1.highest_grade()}")
+# make sure figure out a way to print out the averaged total of student grade
+>>>>>>> 586f0b0104e3be6f67d470b1e52dfde81c4eddcd
